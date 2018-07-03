@@ -1,0 +1,26 @@
+<!-- <div *ngFor="let file of FileList;">
+
+<ul>
+  <li>{{file.OriginalPath}}</li>
+</ul>
+</div> -->
+
+
+
+
+<div>
+
+  <select multiple id="selector">
+    <option *ngFor="let file of FileList;" (click)="GetFile(file)">{{file.OriginalPath}}</option>
+  </select>
+
+</div>
+<div *ngFor="let data of ArrayOfFiles;">
+  {{data.name}}
+  <div *ngFor="let item of data.parameters;">
+    <input type="checkbox" id=data.name (click)="checked($event, item, data.name)">{{item}}
+
+  </div>
+</div>
+<input type="submit" value="submit" (click)="submit()" />
+<div id="WellLogGraph"></div>
